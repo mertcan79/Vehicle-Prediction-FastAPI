@@ -22,12 +22,12 @@ async def load_model():
 
 
 @app.get("/", status_code=200)
-def root(request: Request):
+async def root(request: Request):
     return templates.TemplateResponse('predict.html', context={'request': request})
 
 
 @app.get("/predict_endpoint", status_code=200)
-def endpoint(request: Request, data):
+async def endpoint(request: Request, data):
     return int(reg.model.predict(data).tolist())
 
 
