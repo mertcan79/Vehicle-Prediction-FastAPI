@@ -23,12 +23,7 @@ docker build -t vehicle-ml-build .
 docker run -d -p 80:80 --name vehicle-api vehicle-ml-build 
 ```
 
-### 3. Run Pytest with coverage
-```
-docker exec -it vehicle-api pytest --ignore=tests/ --cov=app tests/ --cov-config=.coveragerc
-```
-
-### 4. Go to localhost
+### 3. Go to localhost
 http://127.0.0.1/docs
 
 
