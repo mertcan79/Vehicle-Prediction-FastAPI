@@ -1,6 +1,4 @@
-FROM tiangolo/uvicorn-gunicorn:python3.8-slim
-
-LABEL maintainer="https://github.com/rodrigo-arenas"
+FROM uvicorn-gunicorn:python3.8-slim
 
 WORKDIR /app
 
