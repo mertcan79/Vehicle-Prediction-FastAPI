@@ -26,6 +26,11 @@ def root(request: Request):
     return templates.TemplateResponse('predict.html', context={'request': request})
 
 
+@app.get("/predict_endpoint", status_code=200)
+def endpoint(request: Request, data):
+    return int(reg.model.predict(data).tolist())
+
+
 @app.post('/pred')
 async def get_pred(request: Request):
     data = await request.form()
