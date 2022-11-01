@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Price Prediction</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', path='style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"><!-- For running locally -->
+</head>
+
+<body>
+    <div class="login">
+        <h1>What is my vehicle's price?</h1>
+        <form action="/pred" method="post">
+
+            Make<input type="text" name="Make" placeholder="Make" value="BMW" required="required" /><br>
+            Model<input type="text" name="Model" placeholder="Model" value="1 Series M" required="required" /><br>
+            Year<input type="number" name="Year" placeholder="Year" value=2011 required="required" /><br>
+            Engine_Fuel_Type<input type="text" name="Engine_Fuel_Type" placeholder="Engine Fuel Type" value="premium unleaded (required)" required="required" /><br>
+            Engine_HP<input type="number" name="Engine_HP" placeholder="Engine_HP" value=335 required="required" /><br>
+            Engine_Cylinders<input type="number" name="Engine_Cylinders" placeholder="Engine Cylinders" value=6 required="required" /><br>
+            Transmission_Type<input type="text" name="Transmission_Type" placeholder="Transmission Type" value ="MANUAL" required="required" /><br>
+            Driven_Wheels<input type="text" name="Driven_Wheels" placeholder="Driven_Wheels" value="rear wheel drive" required="required" /><br>
+            Number_of_Doors<input type="number" name="Number_of_Doors" placeholder="Number of Doors" value=2 required="required" /><br>
+            Market_Category<input type="text" name="Market_Category" placeholder="Market Category" value='"Factory Tuner,Luxury,High-Performance"' required="required" /><br>
+            Vehicle_Size<input type="text" name="Vehicle_Size" placeholder="Vehicle Size" value="Compact" required="required" /><br>
+            Vehicle_Style<input type="text" name="Vehicle_Style" placeholder="Vehicle Style" value="Coupe" required="required" /><br>
+            highway_MPG<input type="number" name="highway_MPG" placeholder="highway MPG" value=26 required="required" /><br>
+            city_mpg<input type="number" name="city_mpg" placeholder="city mpg" value=19 required="required" /><br>
+            Popularity<input type="number" name="Popularity" placeholder="Popularity" value=3916 required="required" /><br>
+
+            <br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+        </form>
+        <br>
+        <br>
+        <div class="pred"><h1>Your vehicle's predicted price is {{ pred }}</h1></div>
+
+
+    </div>
+
+</body>
+</html>
